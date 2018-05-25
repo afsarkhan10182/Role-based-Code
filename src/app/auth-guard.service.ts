@@ -18,12 +18,10 @@ constructor(private heroService: HeroService, private router: Router) { }
                 state: RouterStateSnapshot): Observable<boolean> | Promise<boolean>|boolean {
    return this.isRoleChecked()
      .then( (isRoleChecked: any) => {
-       // alert(isRoleChecked);
-       // alert(route.url);
    if (route.url == isRoleChecked) {
-     this.router.navigate(['/home']);
+     return true;
    } else {
-     return false;
+     this.router.navigate(['/home']);
      }
    } );
   }
